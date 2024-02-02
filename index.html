@@ -35,7 +35,20 @@
 </head>
 
 <body>
+  <!-- test case -->
+  <div id="tokenDisplay" style="position: fixed; top: 0; left: 0; right: 0; background-color: #f0f0f0; padding: 10px; font-weight: bold;">
+    Authentication Token: <span id="tokenValue">Loading...</span>
+  </div>
 
+  <script>
+    // Listen for messages from React Native
+    window.addEventListener('message', function(event) {
+      // Handle the received authentication token
+      var authToken = event.data;
+      document.getElementById('tokenValue').innerHTML = authToken;
+    });
+  </script>
+  
   <!--
     - #MAIN
   -->
