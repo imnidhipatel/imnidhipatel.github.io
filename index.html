@@ -41,12 +41,14 @@
   </div>
 
   <script>
-    // Listen for messages from React Native
-    window.addEventListener('message', function(event) {
-      console.log('Received message:', authToken);
-      // Handle the received authentication token
-      var authToken = event.data;
-      document.getElementById('tokenValue').innerHTML = authToken;
+    // Delay script execution until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Listen for messages from React Native
+      document.addEventListener('message', function(event) {
+        // Handle the received authentication token
+        var authToken = event.data;
+        document.getElementById('tokenValue').innerHTML = authToken;
+      });
     });
   </script>
   
