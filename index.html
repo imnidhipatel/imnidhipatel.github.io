@@ -43,6 +43,7 @@
   <script>
     // Listen for messages from React Native
     window.addEventListener('message', function(event) {
+      console.log('Received message:', authToken);
       // Handle the received authentication token
       var authToken = event.data;
       document.getElementById('tokenValue').innerHTML = authToken;
